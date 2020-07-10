@@ -1,3 +1,4 @@
+#Drone CI File
 
 kind: pipeline
 type: kubernetes
@@ -24,3 +25,5 @@ steps:
     repo: myrepo
     auto_tag: true
     auto_tag_suffix: drone-build
+
+#Notes:
