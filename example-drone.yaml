@@ -5,12 +5,12 @@ name: default
 
 steps:
 - name: test
-  image: golang:1.10-alpine
+  image: golang:1.13
   commands:
-    - "go test"
+    - go test -v
 
 - name: build
-  image: golang
+  image: golang:1.13
   commands:
     - "go build -o ./myapp"
 
