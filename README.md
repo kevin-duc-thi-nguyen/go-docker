@@ -1,2 +1,2 @@
 # go-docker
-GO Docker Example
+GO Docker Example to be used with Drone Runners on Kubernetes. 
