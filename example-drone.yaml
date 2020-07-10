@@ -1,0 +1,26 @@
+
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+- name: test
+  image: golang:1.10-alpine
+  commands:
+    - "go test"
+
+- name: build
+  image: golang
+  commands:
+    - "go build -o ./myapp"
+
+- name: publish  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: myrepo
+    auto_tag: true
+    auto_tag_suffix: drone-build
