@@ -5,10 +5,6 @@ type: kubernetes
 name: default
 
 steps:
-- name: test
-  image: golang:1.13
-  commands:
-    - go test -v
 
 - name: build
   image: golang:1.13
@@ -26,4 +22,8 @@ steps:
     auto_tag: true
     auto_tag_suffix: drone-build
 
-#Notes:
+#Old Test:
+#- name: test
+#  image: golang:1.13
+#  commands:
+#    - go test -v
